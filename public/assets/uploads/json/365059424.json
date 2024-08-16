@@ -1,0 +1,81 @@
+[
+    {
+        "Version": "1.1",
+        "TranDtls": {
+            "TaxSch": "GST",
+            "SupTyp": "SEZWOP",
+            "IgstOnIntra": "N",
+            "RegRev": "N"
+        },
+        "DocDtls": {
+            "Typ": "INV",
+            "No": "085",
+            "Dt": "05/07/2024"
+        },
+        "SellerDtls": {
+            "Gstin": "19AABCP4801G1ZM",
+            "LglNm": " Pasko Engineering (P) Ltd",
+            "TrdNm": " Pasko Engineering (P) Ltd",
+            "Addr1": "<p>\r\n\t6/5, Behala Industrial Estate,</p>\r\n<p>\r\n\t620,Diamond Harbour Road,</p>\r\n<p>\r\n\tKolkata - 700 034</p>\r\n",
+            "Loc": "WEST BENGAL",
+            "Pin": "700034",
+            "Stcd": "19",
+            "Ph": "2445-2011/7082",
+            "Em": "paskoengg@gmail.com"
+        },
+        "BuyerDtls": {
+            "Gstin": "22AAACJ7961J1ZG",
+            "LglNm": "JAI BALAJI INDUSTRIES LTD.",
+            "TrdNm": "JAI BALAJI INDUSTRIES LTD.",
+            "Pos": "0",
+            "Addr1": "<p>\r\n\tJBILL - V</p>\r\n<p>\r\n\tINDUSTRIAL GROWTH CENTER</p>\r\n<p>\r\n\tBORAI, P.O. - RAMSADA,</p>\r\n<p>\r\n\tDISTRICT - DURG,&nbsp;</p>\r\n<p>\r\n\tPIN - 491009</p>\r\n",
+            "Loc": "",
+            "Pin": "491009",
+            "Stcd": "22",
+            "Ph": "",
+            "Em": ""
+        },
+        "DispDtls": {
+            "Nm": " Pasko Engineering (P) Ltd",
+            "Addr1": "<p>\r\n\t6/5, Behala Industrial Estate,</p>\r\n<p>\r\n\t620,Diamond Harbour Road,</p>\r\n<p>\r\n\tKolkata - 700 034</p>\r\n",
+            "Loc": "WEST BENGAL",
+            "Pin": "700034",
+            "Stcd": "19"
+        },
+        "ShipDtls": null,
+        "ValDtls": {
+            "AssVal": 522000,
+            "Discount": 0,
+            "TotInvVal": 568980
+        },
+        "ExpDtls": null,
+        "EwbDtls": null,
+        "PayDtls": null,
+        "RefDtls": null,
+        "AddlDocDtls": null,
+        "ItemList": [
+            {
+                "SlNo": "1",
+                "PrdDesc": "ID FAN FOR 100 TPD SPONGE IRON PLANT",
+                "IsServc": "N",
+                "HsnCd": "84145930",
+                "Barcde": null,
+                "Qty": 1,
+                "FreeQty": 0,
+                "Unit": "PCS",
+                "UnitPrice": 522000,
+                "TotAmt": 522000,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 522000,
+                "GstRt": 9,
+                "TotItemVal": 568980,
+                "OrdLineRef": null,
+                "OrgCntry": null,
+                "PrdSlNo": null,
+                "BchDtls": null,
+                "AttribDtls": null
+            }
+        ]
+    }
+]

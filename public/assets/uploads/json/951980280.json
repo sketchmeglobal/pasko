@@ -1,0 +1,82 @@
+[
+    {
+        "Version": "1.1",
+        "TranDtls": {
+            "TaxSch": "GST",
+            "SupTyp": "B2B",
+            "IgstOnIntra": "N",
+            "RegRev": "N"
+        },
+        "DocDtls": {
+            "Typ": "INV",
+            "No": "PEPL/085",
+            "Dt": "05/07/2024"
+        },
+        "SellerDtls": {
+            "Gstin": "19AABCP4801G1ZM",
+            "LglNm": " Pasko Engineering (P) Ltd",
+            "TrdNm": " Pasko Engineering (P) Ltd",
+            "Addr1": "<p>\r\n\t6/5, Behala Industrial Estate,620,Diamond Harbour Road, Kolkata - 700034</p>\r\n",
+            "Loc": "WEST BENGAL",
+            "Pin": 700034,
+            "Stcd": "19",
+            "Ph": "03324452011",
+            "Em": "paskoengg@gmail.com"
+        },
+        "BuyerDtls": {
+            "Gstin": "22AAACJ7961J1ZG",
+            "LglNm": "JAI BALAJI INDUSTRIES LTD.",
+            "TrdNm": "JAI BALAJI INDUSTRIES LTD.",
+            "Pos": "22",
+            "Addr1": "<p>\r\n\tJBIL - V, BORAI, P.O. - RAMSADA,DISTRICT - DURG, PIN - 491009</p>\r\n",
+            "Loc": "RAMSADA, DURG",
+            "Pin": 491009,
+            "Stcd": "22",
+            "Ph": "07882617248",
+            "Em": null
+        },
+        "DispDtls": {
+            "Nm": " Pasko Engineering (P) Ltd",
+            "Addr1": "<p>\r\n\t6/5, Behala Industrial Estate,620,Diamond Harbour Road, Kolkata - 700034</p>\r\n",
+            "Loc": "WEST BENGAL",
+            "Pin": 700034,
+            "Stcd": "19"
+        },
+        "ShipDtls": null,
+        "ValDtls": {
+            "AssVal": 522000,
+            "Discount": 0,
+            "TotInvVal": 615960
+        },
+        "ExpDtls": null,
+        "EwbDtls": null,
+        "PayDtls": null,
+        "RefDtls": null,
+        "AddlDocDtls": null,
+        "ItemList": [
+            {
+                "SlNo": "1",
+                "PrdDesc": "ID FAN FOR 100 TPD SPONGE IRON PLANT",
+                "IsServc": "N",
+                "HsnCd": "84145930",
+                "Barcde": null,
+                "Qty": 1,
+                "FreeQty": 0,
+                "Unit": "PCS",
+                "UnitPrice": 522000,
+                "TotAmt": 522000,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 522000,
+                "GstRt": 18,
+                "IgstAmt": 93960,
+                "TotItemVal": 615960,
+                "OrdLineRef": null,
+                "OrgCntry": null,
+                "PrdSlNo": null,
+                "BchDtls": null,
+                "AttribDtls": null
+            }
+        ]
+    }
+]

@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Invoice - <?= $invoice->invoice_number ?></title>
+
+    <!-- paper css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body{font-family: "Roboto", sans-serif;font-weight: 400;font-style: normal;}
+        address,th,td,p{margin:0;font-size:13px;}
+    </style>
+</head>
+
+    <body class="A4 " >
+        <?php
+        use App\Controllers\Invoice\InvoiceController;
+        function convert_words($number){
+            $controller = new InvoiceController();
+            $words = $controller->numberToWords($number);
+            return ucfirst($words);
+        }
+        ?>
+        <?php 
+            $print_arr = array('TRIPLICATE FOR ASSESSEE','ORIGINAL FOR BUYER','DUPLICATE FOR TRANSPORTER','EXTRA COPY');
+            foreach($print_arr as $pa){
+                ?>
+                <section class="sheet p-4 mx-auto" style="height:auto;">
+                    <div class="container-fluid border border-2 border-dark p-3" >
+                        
+                        <div class="row">
+                            
+                            <table class="table table-bordered">
+                                
+                                <thead>
+                                    <tr>
+                                        <td colspan="6">
+                                            <img style="height:50px" src="<?php echo base_url()?>assets/backdesk/img/logo.jpeg" />
+                                            <h6 class="m-0"><strong><?= COMPANY_FULL_NAME ?></strong></h6>
+                                            <p class="m-0"><b>Email Id:</b> <?= $admin_details->email_id?></p>
+                                            <p class="m-0"><b>Phone No.:</b> <?= $admin_details->phone?></p>
+                                        </td>
+                                        <td colspan="2">
+                                            <address><b>Address: </b><?= $admin_details->address;?></address>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"><b>TAX INVOICE</b></td>
+                                        <td colspan="4"><p class="m-0"><?=$pa?></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <p class="m-0"><strong>Name & Address of Buyer:</strong></p>
+                                            <p class="m-0"><?= $invoice->customer_name ?> (<?= $invoice->sub_customer_name ?>)</p> 
+                                            <address class="m-0"><?= $customer_details->address ?></address>
+                                            <p><strong>BUYER'S GSTIN: </strong><?php echo $customer_details->GSTIN?></p>
+                                        </td>
+                                        <td colspan="2">
+                                            <?php if($invoice->delivery_address != '') { ?>
+                                                <p class="m-0"><strong>Delivery Address:</strong></p>
+                                                <p><?=$invoice->delivery_address?></p>
+                                            <?php } ?>
+                                        </td>
+                                        <td colspan="3">
+                                            <p><strong>Invoice No:</strong> <?= $invoice->invoice_number ?></p>
+                                            <p><strong>Invoice Date:</strong> <?=date('d-m-Y', strtotime($invoice->invoice_date))?></p>
+                                            <p><strong>P.O. No:</strong> <?=$invoice->po_number?></p>
+                                            <p><strong>P.O. Date:</strong> <?=date('d-m-Y', strtotime($invoice->po_date))?></p>
+                                            <p><strong>Pasko Ref. No:</strong> <?=$invoice->reference_number?></p>
+                                            <div class="border">
+                                                <?php if($invoice->govt_irn_no != '') { ?>
+                                                    <p><strong>IRN No.:</strong> <?=$invoice->govt_irn_no?></p>
+                                                    <p><strong>Acknowledgement No.:</strong> <?=$invoice->govt_acknowledgement_no?></p>
+                                                <?php } ?>
+                                            </div>
+                                            <?php
+                                                $taxable_amount = number_format(($invoice->net_amount - $invoice->discount_amount + $invoice->other_charges_amount), 2, '.', '');
+                                                $cgst = number_format(($taxable_amount*$invoice->cgst)/100, 2, '.', '');
+                                                $sgst = number_format(($taxable_amount*$invoice->sgst)/100, 2, '.', '');
+                                                $igst = number_format(($taxable_amount*$invoice->igst)/100, 2, '.', '');
+                                            ?>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>#</th>
+                                        <th width="45%">Description</th>
+                                        <th class="text-center"><?php echo $invoice->code_type?></th>
+                                        <th class="text-end">No. of Packs</th>
+                                        <th class="text-end">Qty.</th>
+                                        <th class="text-end">Unit Rate (Rs.)</th>
+                                        <th class="text-end">Assessable Value (Rs.)</th>
+                                        <th class="text-end">Net Assessable Value (Rs.)</th>
+                                    </tr>
+                                    
+                                    <?php
+                                    $counter = 1;
+                                    $total = 0;
+                                    foreach ($invoice_dtl as $v) {
+                                        $total += $v->assessable_value;
+                                        ?>
+                                        <tr>
+                                            <td><?= ($v->hsn_code == '') ? '' : $counter++ . '.' ?></td>
+                                            
+                                            <td><?= $v->master_particular_name .'<br>'. $v->particular_after_content ?></td>
+                                            <td class="text-center"><?= $v->hsn_code ?></td>
+                                            <td class="text-end"><?= $v->number_of_packs ?></td>
+                                            <td class="text-end"><?= ($v->hsn_code == '') ? '' : $v->quantity ?></td>
+                                            <td class="text-end"><?= ($v->hsn_code == '') ? '' : $v->unit_rate ?></td>
+                                            <td class="text-end"><?= ($v->hsn_code == '') ? '' : $v->assessable_value ?></td>
+                                            <td class="text-end"><?= ($v->hsn_code == '') ? '' : $v->assessable_value ?></td>
+                                           
+                                        </tr>
+                                        <?php
+                                        
+                                    }
+                                    ?>
+                                    <?php
+                                    if($invoice->level1_value != 0){ ?>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <th colspan="2"><?=$invoice->level1_heading?></th>
+                                            <td class="text-end"><?=$invoice->level1_value?></td>
+                                        </tr>
+                                    <?php    
+                                    }
+                                    if($invoice->level2_value != 0){ ?>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <th colspan="2"><?=$invoice->level2_heading?></th>
+                                            <td class="text-end"><?=$invoice->level2_value?></td>
+                                        </tr>
+                                    <?php    
+                                    }
+                                    ?>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <th class="text-center" colspan="2">Total Assessable Value</th>
+                                        <th class="text-end"><?php echo number_format((float)round(($total+$invoice->level1_value+$invoice->level2_value)), 2, '.', '');?></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <p><strong><u><?=COMPANY_FULL_NAME?></u></strong></p>
+                                            <p><strong>GSTIN: </strong><?php echo $admin_details->GSTIN?></p>
+                                            <p><strong>CIN: </strong><?php echo $admin_details->cin_no?></p>
+                                        </td>
+                                        <td colspan="2">
+                                            <p><strong>Other Charges:</strong></p>
+                                            <p><strong>Discount:</strong></p>
+                                            <p><strong>CGST @ <?= $invoice->cgst?>%:</strong></p>
+                                            <p><strong>SGST @ <?= $invoice->sgst?>%:</strong></p>
+                                            <p><strong>IGST @ <?= $invoice->igst?>:</strong></p>
+                                        </td>
+                                        <td colspan="1">
+                                            <p><?php echo $invoice->other_charges_amount ?></p>
+                                            <p><?php echo $invoice->discount_amount ?></p>
+                                            <p><?php echo $cgst?></p>
+                                            <p><?php echo $sgst?></p>
+                                            <p><?php echo $igst?></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5"></td>
+                                        <td colspan="2"><p><strong>Grand Total</strong></p></td>
+                                        <td colspan="1"><?php echo number_format((float)round($invoice->gross_amount), 2, '.', ''); ?></td>
+                                    </tr>
+                                     <tr>
+                                        <td colspan="2">
+                                            <p><strong>Total Amount In Words</strong></p>
+                                            <p><strong>Total CGST In Words</strong></p>
+                                            <p><strong>Total SGST In Words</strong></p>
+                                            <p><strong>Total IGST In Words</strong></p>
+                                        </td>
+                                        <td colspan="6">
+                                            <p><?= convert_words(round($invoice->gross_amount)) ?></p>
+                                            <p><?= ($cgst == 0) ? '-' : convert_words($cgst) ?></p>
+                                            <p><?= ($sgst == 0) ? '-' : convert_words($sgst) ?></p>
+                                            <p><?= ($igst == 0) ? '-' : convert_words($igst) ?></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><p><strong>Mode Of Transport: </strong></p></td>
+                                        <td colspan="2"><p><?= $invoice->mode_of_transport ?></p></td>
+                                        <td colspan="4" rowspan="4">
+                                            <p><b>FOR, <?=COMPANY_FULL_NAME?></b></p>
+                                            <br><br><br><br><br><br>
+                                            <p><i>(Authorised Signatory)</i></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><p><strong>Vehicle Number: </strong></p></td>
+                                        <td colspan="2"><p><?= $invoice->vehicle_number ?></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"><p class="border-bottom border-dark"><strong>Bank Details</strong> : <?php echo $admin_details->bank_details?></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <p class="">
+                                                <b>
+                                                    <?php 
+                                                    if(isset($declarations)){ 
+                                                        echo $declarations->comment;
+                                                    }else{
+                                                        echo '';
+                                                    }
+                                                    ?>
+                                                </b>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8">
+                                            <p class="fw-bold"><small>SUBJECT TO KOLKATA JURISDICTION</small></p>
+                                            <p class="fw-bold"><small>This is a Computer Generated Invoice</small></p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                
+                            </table>
+                            
+                        </div>
+                        
+                    </div>
+                </section>      
+                <?php
+            }
+        ?>
+    </body>
+    
+</html>

@@ -1,0 +1,106 @@
+[
+    {
+        "Version": "1.1",
+        "TranDtls": {
+            "TaxSch": "GST",
+            "SupTyp": "B2B",
+            "IgstOnIntra": "N",
+            "RegRev": "N"
+        },
+        "DocDtls": {
+            "Typ": "INV",
+            "No": "PEPL/PEPL/86",
+            "Dt": "08/07/2024"
+        },
+        "SellerDtls": {
+            "Gstin": "19AABCP4801G1ZM",
+            "LglNm": " Pasko Engineering (P) Ltd",
+            "TrdNm": " Pasko Engineering (P) Ltd",
+            "Addr1": "<p>\r\n\t6/5, Behala Industrial Estate,620,Diamond Harbour Road, Kolkata - 700034</p>\r\n",
+            "Loc": "WEST BENGAL",
+            "Pin": 700034,
+            "Stcd": "19",
+            "Ph": "03324452011",
+            "Em": "paskoengg@gmail.com"
+        },
+        "BuyerDtls": {
+            "Gstin": "21AACCE9643C1Z1",
+            "LglNm": "ENERGYTEK BOILER PVT. LTD.",
+            "TrdNm": "ENERGYTEK BOILER PVT. LTD.",
+            "Pos": "21",
+            "Addr1": "<p>\r\n\tPADMALAVA NAGAR P O BRAMHANI GAON VIA BARANG DISTRICT - CUTTACK PIN - 754005 ODISHA</p>\r\n",
+            "Loc": "BRAMHANI GAON",
+            "Pin": 754005,
+            "Stcd": "21",
+            "Ph": "9437038400",
+            "Em": "energytekboiler@hotmail.com"
+        },
+        "DispDtls": {
+            "Nm": " Pasko Engineering (P) Ltd",
+            "Addr1": "<p>\r\n\t6/5, Behala Industrial Estate,620,Diamond Harbour Road, Kolkata - 700034</p>\r\n",
+            "Loc": "WEST BENGAL",
+            "Pin": 700034,
+            "Stcd": "19"
+        },
+        "ShipDtls": null,
+        "ValDtls": {
+            "AssVal": 116000,
+            "Discount": 0,
+            "IgstVal": 19620,
+            "TotInvVal": 136880
+        },
+        "ExpDtls": null,
+        "EwbDtls": null,
+        "PayDtls": null,
+        "RefDtls": null,
+        "AddlDocDtls": null,
+        "ItemList": [
+            {
+                "SlNo": "1",
+                "PrdDesc": "CENTRIFUGAL FAN WITH 7.5HP/2P MOTOR",
+                "IsServc": "N",
+                "HsnCd": "84145930",
+                "Barcde": null,
+                "Qty": 1,
+                "FreeQty": 0,
+                "Unit": "PCS",
+                "UnitPrice": 53500,
+                "TotAmt": 53500,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 53500,
+                "GstRt": 18,
+                "IgstAmt": 9630,
+                "TotItemVal": 63130,
+                "OrdLineRef": null,
+                "OrgCntry": null,
+                "PrdSlNo": null,
+                "BchDtls": null,
+                "AttribDtls": null
+            },
+            {
+                "SlNo": "2",
+                "PrdDesc": "CENTRIFUGAL FAN WITH 10HP/2P MOTOR",
+                "IsServc": "N",
+                "HsnCd": "84145930",
+                "Barcde": null,
+                "Qty": 1,
+                "FreeQty": 0,
+                "Unit": "PCS",
+                "UnitPrice": 55500,
+                "TotAmt": 55500,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 55500,
+                "GstRt": 18,
+                "IgstAmt": 9990,
+                "TotItemVal": 65490,
+                "OrdLineRef": null,
+                "OrgCntry": null,
+                "PrdSlNo": null,
+                "BchDtls": null,
+                "AttribDtls": null
+            }
+        ]
+    }
+]

@@ -1,0 +1,81 @@
+[
+    {
+        "Version": "1.1",
+        "TranDtls": {
+            "TaxSch": "GST",
+            "SupTyp": null,
+            "IgstOnIntra": "N",
+            "RegRev": "N"
+        },
+        "DocDtls": {
+            "Typ": "INV",
+            "No": "102",
+            "Dt": "19/07/2024"
+        },
+        "SellerDtls": {
+            "Gstin": "19AABCP4801G1ZM",
+            "LglNm": " Pasko Engineering (P) Ltd",
+            "TrdNm": " Pasko Engineering (P) Ltd",
+            "Addr1": "<p>\r\n\t6/5, Behala Industrial Estate,</p>\r\n<p>\r\n\t620,Diamond Harbour Road,</p>\r\n<p>\r\n\tKolkata - 700 034</p>\r\n",
+            "Loc": "WEST BENGAL",
+            "Pin": "700034",
+            "Stcd": "19",
+            "Ph": "2445-2011/7082",
+            "Em": "paskoengg@gmail.com"
+        },
+        "BuyerDtls": {
+            "Gstin": "19AAACE6641E1ZS",
+            "LglNm": "EXIDE INDUSTRIES LIMITED",
+            "TrdNm": "EXIDE INDUSTRIES LIMITED",
+            "Pos": "0",
+            "Addr1": "<p>\r\n\tDURGACHAK, HALDIA, DISTRICT : PURBA MIDNAPUR</p>\r\n",
+            "Loc": "",
+            "Pin": "721602",
+            "Stcd": "19",
+            "Ph": "",
+            "Em": ""
+        },
+        "DispDtls": {
+            "Nm": " Pasko Engineering (P) Ltd",
+            "Addr1": "<p>\r\n\t6/5, Behala Industrial Estate,</p>\r\n<p>\r\n\t620,Diamond Harbour Road,</p>\r\n<p>\r\n\tKolkata - 700 034</p>\r\n",
+            "Loc": "WEST BENGAL",
+            "Pin": "700034",
+            "Stcd": "19"
+        },
+        "ShipDtls": null,
+        "ValDtls": {
+            "AssVal": 16000,
+            "Discount": 0,
+            "TotInvVal": 18880
+        },
+        "ExpDtls": null,
+        "EwbDtls": null,
+        "PayDtls": null,
+        "RefDtls": null,
+        "AddlDocDtls": null,
+        "ItemList": [
+            {
+                "SlNo": "1",
+                "PrdDesc": "IMPELLER FOR FRESH AIR BLOWER",
+                "IsServc": "N",
+                "HsnCd": "84145930",
+                "Barcde": null,
+                "Qty": 1,
+                "FreeQty": 0,
+                "Unit": "PCS",
+                "UnitPrice": 16000,
+                "TotAmt": 16000,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 16000,
+                "GstRt": 0,
+                "TotItemVal": 18880,
+                "OrdLineRef": null,
+                "OrgCntry": null,
+                "PrdSlNo": null,
+                "BchDtls": null,
+                "AttribDtls": null
+            }
+        ]
+    }
+]

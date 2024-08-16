@@ -1,0 +1,103 @@
+[
+    {
+        "Version": "1.1",
+        "TranDtls": {
+            "TaxSch": "GST",
+            "SupTyp": "SEZWOP",
+            "IgstOnIntra": "N",
+            "RegRev": "N"
+        },
+        "DocDtls": {
+            "Typ": "INV",
+            "No": "NS/030/23-24",
+            "Dt": "12/03/2024"
+        },
+        "SellerDtls": {
+            "Gstin": "12QWETYYUPVG",
+            "LglNm": "LEGAL NAME",
+            "TrdNm": "TRADE NAME",
+            "Addr1": "SOME ADDRESS",
+            "Loc": "WEST BENGAL",
+            "Pin": "900989",
+            "Stcd": "19",
+            "Ph": "8709878908",
+            "Em": "EMAIL@GMAIL.COM"
+        },
+        "BuyerDtls": {
+            "Gstin": "19232323we23",
+            "LglNm": "Seller Account 1",
+            "TrdNm": "Seller Account 1",
+            "Pos": "0",
+            "Addr1": "<p>\r\n\tSeller Account 1</p>\r\n",
+            "Loc": "33, Udayan Pally, D P Nagar, Belghoria, Kolkata",
+            "Pin": "7000098",
+            "Stcd": "21",
+            "Ph": "9876789877",
+            "Em": "sketchmeglobal@gmail.com"
+        },
+        "DispDtls": {
+            "Nm": "LEGAL NAME",
+            "Addr1": "SOME ADDRESS",
+            "Loc": "WEST BENGAL",
+            "Pin": "900989",
+            "Stcd": "19"
+        },
+        "ShipDtls": null,
+        "ValDtls": {
+            "AssVal": 2052510,
+            "Discount": 0,
+            "TotInvVal": 2421961.8
+        },
+        "ExpDtls": null,
+        "EwbDtls": null,
+        "PayDtls": null,
+        "RefDtls": null,
+        "AddlDocDtls": null,
+        "ItemList": [
+            {
+                "SlNo": "1",
+                "PrdDesc": "Construction work of 1472 Rajdanga main road. Amount before tax",
+                "IsServc": "N",
+                "HsnCd": "995415",
+                "Barcde": null,
+                "Qty": 1,
+                "FreeQty": 0,
+                "Unit": "PCS",
+                "UnitPrice": 1952510,
+                "TotAmt": 1952510,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 1952510,
+                "GstRt": 0,
+                "TotItemVal": 2303961.8,
+                "OrdLineRef": null,
+                "OrgCntry": null,
+                "PrdSlNo": null,
+                "BchDtls": null,
+                "AttribDtls": null
+            },
+            {
+                "SlNo": "2",
+                "PrdDesc": "COURIER CHARGES",
+                "IsServc": "N",
+                "HsnCd": "11111",
+                "Barcde": null,
+                "Qty": 1,
+                "FreeQty": 0,
+                "Unit": "PCS",
+                "UnitPrice": 100000,
+                "TotAmt": 100000,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 100000,
+                "GstRt": 0,
+                "TotItemVal": 118000,
+                "OrdLineRef": null,
+                "OrgCntry": null,
+                "PrdSlNo": null,
+                "BchDtls": null,
+                "AttribDtls": null
+            }
+        ]
+    }
+]
